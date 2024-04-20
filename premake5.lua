@@ -7,9 +7,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
+IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
+IncludeDir["ImGui"] = "Hazel/vendor/imgui"
 
 -- 将Hazel/vendor/GLFW目录下的premake5.lua包含过来
 include "Hazel/vendor/GLFW"
+include "Hazel/vendor/Glad"
+include "Hazel/vendor/imgui"
 
 project "Hazel"
     location "Hazel"
@@ -31,12 +35,16 @@ project "Hazel"
     {
 		"%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}",
     }
 
     links 
     {
         "GLFW",
+        "Glad",
+        "ImGui",
         "opengl32.lib"
     }
 
@@ -48,7 +56,8 @@ project "Hazel"
         {
             "HZ_PLATFORM_WINDOWS",
             "HZ_BUILD_DLL",
-            "_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING"
+            "_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
