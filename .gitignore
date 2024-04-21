@@ -5,4 +5,7 @@ bin-int/
 
 #files
 **.user
+**.vcxproj
+**.filters
+Hazel.sln
 SandBox/imgui.ini
