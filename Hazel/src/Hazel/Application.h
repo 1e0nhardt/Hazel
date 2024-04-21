@@ -18,7 +18,7 @@ namespace Hazel
 	{
 	public:
 		Application();
-		~Application();
+		~Application() = default;
 		void OnEvent(Event& e);
 		void Run();
 
