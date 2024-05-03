@@ -10,6 +10,7 @@ IncludeDir["GLFW"] = "Hazel/vendor/GLFW/include"
 IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
 IncludeDir["ImGui"] = "Hazel/vendor/imgui"
 IncludeDir["glm"] = "Hazel/vendor/glm"
+IncludeDir["stb_image"] = "Hazel/vendor/stb_image"
 
 -- 将Hazel/vendor/GLFW目录下的premake5.lua包含过来
 group "Dependencies"
@@ -37,6 +38,8 @@ project "Hazel"
         "%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
     }
 	
 	defines
@@ -52,6 +55,8 @@ project "Hazel"
         "%{IncludeDir.Glad}",
         "%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
+		
     }
 
     links 
