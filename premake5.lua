@@ -77,7 +77,6 @@ project "Hazel"
 
         defines
         {
-            "HZ_PLATFORM_WINDOWS",
             "HZ_BUILD_DLL",
             "_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING",
             "GLFW_INCLUDE_NONE"
@@ -131,7 +130,6 @@ project "Sandbox"
 
         defines
         {
-            "HZ_PLATFORM_WINDOWS",
             "_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING"
         }
 
